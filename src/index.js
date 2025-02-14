@@ -4,6 +4,7 @@ import started from 'electron-squirrel-startup';
 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { randomInt } from 'node:crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,8 +17,8 @@ if (started) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 600,
+    height: 450,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
