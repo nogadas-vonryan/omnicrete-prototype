@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="pl-20 mx-auto">
+        <video id="vid" width="1280" height="720" autoplay>
+            <source src="../assets/Chess type beat feat. OIIA Cat.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>    
+    </div>
+
+    <script>
+        document.addEventListener("click", function () {
+            document.getElementById("vid").play();
+        }, { once: true });
+    </script>
+</body>
+</html>

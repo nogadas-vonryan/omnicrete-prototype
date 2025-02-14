@@ -25,9 +25,11 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'pages/splashscreen.html'));
+  mainWindow.loadFile(path.join(__dirname, 'pages/oiia.html'));
   mainWindow.maximize();
   mainWindow.menuBarVisible = false;
+
+  mainWindow.fullScreen = true;
 };
 
 // This method will be called when Electron has finished
