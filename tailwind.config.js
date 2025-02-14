@@ -1,11 +1,23 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./src/**/*.{html,js}"
-  ],
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fade: "fade 3s ease-in-out forwards",
+      },
+      keyframes: {
+        fade: {
+          "0%, 100%": { opacity: 0 },
+          "50%": { opacity: 1 },
+        },
+      },
+    },
   },
-  plugins: [],
+  daisyui: {
+    themes: ["light"],
+  },
+  plugins: [
+    require("daisyui")
+  ],
 }
-

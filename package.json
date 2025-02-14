@@ -22,7 +22,6 @@
     "@electron-forge/plugin-fuses": "^7.6.1",
     "@electron/fuses": "^1.8.0",
     "electron": "34.2.0",
-    "electron-squirrel-startup": "^1.0.1",
     "tailwindcss": "3"
   },
   "keywords": [],
@@ -31,5 +30,8 @@
     "email": "vonnogadas251@gmail.com"
   },
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
 }
