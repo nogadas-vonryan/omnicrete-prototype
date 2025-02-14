@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/output.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+    <title>Omnicrete Encoder</title>
+</head>
+
+<body class="bg-slate-100 h-screen">
+    <div class="flex h-full">
+        <!-- Sidebar -->
+        <div class="w-60 bg-white">
+            <div>
+                <img src="../assets/omnicrete.png" class="w-40 h-36 mx-auto">
+            </div>
+            <ul class="menu">
+                <li><a href="#"> <span class="material-symbols-outlined">dashboard</span> Dashboard</a></li>
+                <li><a href="#" class="active"> <span class="material-symbols-outlined">edit_note</span> Encode</a></li>
+                <li><a href="#"> <span class="material-symbols-outlined">menu_book</span> Record Logs</a></li>
+            </ul>
+        </div>
+    
+        <!-- Main Content -->
+        <div class="grow p-8">
+            <form method="GET" action="./form.html" class="card flex flex-col bg-white shadow-lg p-6 mt-20 space-y-2 w-2/4 mx-auto">
+                <label class="form-control w-full">
+                    <div class="label">
+                        <span class="label-text">Supplier</span>
+                    </div>
+                    <input type="text" name="supplier" placeholder="Enter supplier" class="input input-bordered w-full" />
+                </label>
+                <label class="form-control w-full">
+                    <div class="label">
+                        <span class="label-text">Hauler</span>
+                    </div>
+                    <select name="hauler" class="select select-bordered w-full">
+                        <option disabled selected>Select status</option>
+                        <option>Pending</option>
+                        <option>Lost</option>
+                        <option>Delivered</option>
+                    </select>
+                </label>
+                <label class="form-control w-full">
+                    <div class="label">
+                        <span class="label-text">Hauler Drive Number</span>
+                    </div>
+                    <input type="text" name="hauler_drive_no" placeholder="Enter hauler drive number" class="input input-bordered w-full " />
+                </label>
+                <label class="form-control w-full">
+                    <div class="label">
+                        <span class="label-text">Remarks</span>
+                    </div>
+                    <textarea name="remarks" class="textarea textarea-bordered" placeholder="Enter remarks"></textarea>
+                </label>
+                <div>
+                    <button class="btn btn-primary w-full mt-3">Encode</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

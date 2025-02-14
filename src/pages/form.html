@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/output.css">
+    <title>Omnicrete Encoder - Receipt</title>
+</head>
+<body>
+    <div class="flex flex-col items-center text-blue-800 space-y-3 w-80 mx-auto">
+        <div><img src="../assets/omnicrete.png" class="w-60 h-40"></div>
+        <div class="underline decoration-double font-semibold">TRUCK WEIGHING SLIP</div>
+        <div>No. <span class="text-xl text-red-600">123175</span></div>
+        <div class="grid grid-cols-2 gap-3 w-full">
+            <div>SUPPLIER</div> <div class="text-slate-900" id="supplier">Hello</div>
+            <div>HAULER</div> <div class="text-slate-900" id="hauler">Hello</div>
+            <div>HAULER DR #</div> <div class="text-slate-900" id="hauler_drive_no"></div>
+            <div>REMARKS</div> <div class="text-slate-900" id="remarks"></div>
+        </div>
+
+        <div class="w-full pt-2">
+            <table class="table table-fixed border border-blue-800 border-collapse w-full">
+                <tr>
+                    <td class="border border-blue-800">Date</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="date"></span></td>
+                </tr>
+                <tr>
+                    <td class="border border-blue-800">Time</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="time"></span></td>
+                </tr>
+                <tr>
+                    <td class="border border-blue-800">SOURCE DR #</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="source_dr_no"></span></td>
+                </tr>
+                <tr>
+                    <td class="border border-blue-800">ITEM</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="item"></span></td>
+                </tr>
+                <tr>
+                    <td class="border border-blue-800">TRUCK NO.</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="truck_no"></span></td>
+                </tr>
+                <tr>
+                    <td class="border border-blue-800">GROSS WT.</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="gross_weight"></span></td>
+                </tr>
+                <tr>
+                    <td class="border border-blue-800">TARE WT.</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="tare_weight"></span></td>
+                </tr>
+                <tr>
+                    <td class="border border-blue-800">NET WT.</td>
+                    <td class="border border-blue-800 text-slate-900"><span id="net_weight"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const supplier = urlParams.get('supplier');
+        const hauler = urlParams.get('hauler');
+        const hauler_drive_no = urlParams.get('hauler_drive_no');
+        const remarks = urlParams.get('remarks');
+        const date = new Date().toLocaleDateString();
+        const time = new Date().toLocaleTimeString();
+        const source_dr_no = "12345";
+        const item = "VIBRO WASHED SAND";
+        const truck_no = "ABC-1234";
+        const gross_weight = "3000";
+        const tare_weight = "2000";
+        const net_weight = "1000";
+
+        document.getElementById('supplier').innerText = supplier;
+        document.getElementById('hauler').innerText = hauler;
+        document.getElementById('hauler_drive_no').innerText = hauler_drive_no;
+        document.getElementById('remarks').innerText = remarks;
+        document.getElementById('date').innerText = date;
+        document.getElementById('time').innerText = time;
+        document.getElementById('source_dr_no').innerText = source_dr_no;
+        document.getElementById('item').innerText = item;
+        document.getElementById('truck_no').innerText = truck_no;
+        document.getElementById('gross_weight').innerText = gross_weight;
+        document.getElementById('tare_weight').innerText = tare_weight;
+        document.getElementById('net_weight').innerText = net_weight;
+
+        setTimeout(() => {
+            window.print();
+        }, 1000);
+
+        setTimeout(() => {
+            window.location.href = './encode.html';
+        }, 5000);
+    </script>
+</body>
+</html>
