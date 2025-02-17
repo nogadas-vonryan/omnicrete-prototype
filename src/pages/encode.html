@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/output.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
     <title>Omnicrete Encoder</title>
 </head>
 
-<body class="bg-slate-100 h-screen">
+<body class="h-screen">
     <div class="flex h-full">
         <!-- Sidebar -->
-        <div class="w-60 bg-white">
+        <div class="flex flex-col bg-base-100 w-60">
             <div>
                 <img src="../assets/omnicrete.png" class="w-40 h-36 mx-auto">
             </div>
             <ul class="menu">
                 <li><a href="#"> <span class="material-symbols-outlined">dashboard</span> Dashboard</a></li>
-                <li><a href="#" class="active"> <span class="material-symbols-outlined">edit_note</span> Encode</a></li>
-                <li><a href="#"> <span class="material-symbols-outlined">menu_book</span> Record Logs</a></li>
+                <li><a href="./encode.html" class="active"> <span class="material-symbols-outlined">edit_note</span> Encode</a></li>
+                <li><a href="./records.html"> <span class="material-symbols-outlined">menu_book</span> Record Logs</a></li>
             </ul>
+            <div class="grow flex flex-col justify-end">
+                <div class="flex justify-center p-4">
+                    <input data-toggle-theme="black,light" data-act-class="ACTIVECLASS" type="checkbox" class="toggle" checked="checked" />
+                </div>
+            </div>
         </div>
     
         <!-- Main Content -->
         <div class="grow p-8">
-            <form method="GET" action="./form.html" class="card flex flex-col bg-white shadow-lg p-6 mt-20 space-y-2 w-2/4 mx-auto">
+            <form method="GET" action="./form.html" class="card flex flex-col bg-base-100 shadow-xl p-6 mt-20 space-y-2 w-2/4 mx-auto">
                 <label class="form-control w-full">
                     <div class="label">
                         <span class="label-text">Supplier</span>
@@ -56,7 +62,7 @@
                     <textarea name="remarks" class="textarea textarea-bordered" placeholder="Enter remarks"></textarea>
                 </label>
                 <div>
-                    <button class="btn btn-primary w-full mt-3">Encode</button>
+                    <button class="btn btn-neutral w-full mt-3">Encode</button>
                 </div>
             </form>
         </div>
