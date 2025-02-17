@@ -31,7 +31,7 @@ const createWindow = () => {
   mainWindow.maximize();
   mainWindow.menuBarVisible = false;
 
-  mainWindow.fullScreen = true;
+  mainWindow.fullScreen = false;
     
   // Listen for IPC event to open DevTools
   ipcMain.on('open-devtools', () => {
@@ -54,7 +54,7 @@ const createWindow = () => {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow();
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.webContents.on('did-navigate', (event, url) => {
     if (!url.includes('/form.html')) return;
